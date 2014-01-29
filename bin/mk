@@ -35,7 +35,7 @@ while (options.argv.remain.length) {
 }
 
 if (!multik.commands[command]) {
-    command = 'help';
+    command = 'status';
 }
 
 var commandFunc = multik.commands[command];

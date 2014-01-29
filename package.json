@@ -27,6 +27,10 @@
     "osenv": "0.0.3",
     "crypto": "0.0.3",
     "mout": "~0.8.0",
-    "chalk": "~0.4.0"
+    "chalk": "~0.4.0",
+    "graceful-fs": "~2.0.1",
+    "optimist": "~0.6.0",
+    "async": "~0.2.10",
+    "deep-extend": "~0.2.6"
   }
 }
