@@ -1,0 +1,42 @@
+#!/usr/bin/env node
+'use strict';
+
+var mout = require('mout');
+var path = require('path');
+var nopt = require('nopt');
+var multik = require('../lib');
+var pkg = require(path.join(__dirname, '..', 'package.json'));
+
+var options = nopt({
+    version: { type: Boolean, shorthand: 'v' },
+    help: { type: Boolean, shorthand: 'h' }
+});
+
+var args = options.argv.remain;
+var cmd = args[0];
+
+if (options.version) {
+    console.log(pkg.version);
+    process.exit();
+}
+
+var command;
+
+// Get the command to execute
+while (options.argv.remain.length) {
+    command = options.argv.remain.join(' ');
+
+    // Direct lookup
+    if (mout.object.has(multik.commands, command)) {
+        break;
+    }
+
+    options.argv.remain.pop();
+}
+
+if (!multik.commands[command]) {
+    command = 'help';
+}
+
+var commandFunc = multik.commands[command];
+commandFunc();

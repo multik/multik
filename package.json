@@ -1,0 +1,32 @@
+{
+  "name": "multik",
+  "description": "CLI tool for scaffolding out Multik projects",
+  "author": "Alexander Kuzmin <roosit@abricos.org>",
+  "version": "0.0.1",
+  "license": "MIT",
+  "bin": {
+    "mk": "./bin/mk",
+    "multik": "./bin/multik"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/multik/multik.git"
+  },
+  "keywords": [
+    "multiple",
+    "build",
+    "web",
+    "tool",
+    "cli",
+    "scaffold",
+    "git"
+  ],
+  "dependencies": {
+    "nopt": "~2.1.2",
+    "path": "~0.4.9",
+    "osenv": "0.0.3",
+    "crypto": "0.0.3",
+    "mout": "~0.8.0",
+    "chalk": "~0.4.0"
+  }
+}
