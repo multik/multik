@@ -32,22 +32,32 @@ Configuration
 
 Repositories can be configured in multik.json file:
 
-    {
-        "dependencies": {
-            "demo-repo1": {
-                "repo": "https://github.com/multik/demo-repo1.git",
-                "version": "master"
-            },
-            "demo-repo2": {
-                "repo": "https://github.com/multik/demo-repo2.git",
-                "version": "master"
-            },
-            "demo-repo3": {
-                "repo": "https://github.com/multik/demo-repo2.git",
-                "version": "master"
-            }
+```json
+{
+    "groups": {
+        "mygroup": {
+            "directory": "multik_modules/repos23"
+        }
+    },
+    "dependencies": {
+        "demo-repo1": {
+            "repo": "https://github.com/multik/demo-repo1.git",
+            "version": "master"
+        },
+        "demo-repo2": {
+            "group": "mygroup",
+            "repo": "https://github.com/multik/demo-repo2.git",
+            "version": "master"
+        },
+        "demo-repo3": {
+            "group": "mygroup",
+            "folder": "repo3",
+            "repo": "https://github.com/multik/demo-repo2.git",
+            "version": "master"
         }
     }
+}
+```
 
 ## License
 
