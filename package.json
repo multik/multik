@@ -5,8 +5,7 @@
   "version": "0.0.1",
   "license": "MIT",
   "bin": {
-    "mk": "./bin/mk",
-    "multik": "./bin/multik"
+    "mk": "./bin/mk"
   },
   "repository": {
     "type": "git",
