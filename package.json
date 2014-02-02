@@ -5,7 +5,8 @@
   "version": "0.1.2",
   "license": "MIT",
   "bin": {
-    "mk": "./bin/mk"
+    "mk": "./bin/mk",
+    "mk-grunt": "./bin/mk"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,9 @@
     "graceful-fs": "~2.0.1",
     "optimist": "~0.6.0",
     "async": "~0.2.10",
-    "deep-extend": "~0.2.6"
+    "deep-extend": "~0.2.6",
+    "grunt": "~0.4.2",
+    "resolve": "~0.6.1",
+    "findup-sync": "~0.1.2"
   }
 }

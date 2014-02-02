@@ -4,39 +4,37 @@
 var mout = require('mout');
 var path = require('path');
 var nopt = require('nopt');
+var cli = require('../lib/util/cli');
 var multik = require('../lib');
 var pkg = require(path.join(__dirname, '..', 'package.json'));
 
-var options = nopt({
-    version: { type: Boolean, shorthand: 'v' },
-    help: { type: Boolean, shorthand: 'h' }
-});
+process.title = 'multik';
 
-var args = options.argv.remain;
-var cmd = args[0];
+var options = cli.options;
 
+// mk --version
 if (options.version) {
     console.log(pkg.version);
     process.exit();
 }
 
-var command;
+var args = options.argv.remain;
+var command = 'status';
 
-// Get the command to execute
-while (options.argv.remain.length) {
-    command = options.argv.remain.join(' ');
+var binFile = process.argv[1];
 
-    // Direct lookup
-    if (mout.object.has(multik.commands, command)) {
-        break;
+if (options.help) {
+    command = 'help';
+} else if (path.basename(binFile) === 'mk-grunt') {
+    command = 'grunt';
+} else {
+    if (args.length > 0) {
+        command = args[0];
+        args = args.slice(1);
     }
-
-    options.argv.remain.pop();
+    if (!mout.object.has(multik.commands, command)) {
+        command = 'help';
+    }
 }
-
-if (!multik.commands[command]) {
-    command = 'status';
-}
-
-var commandFunc = multik.commands[command];
-commandFunc();
+var commandFunc = mout.object.get(multik.commands, command);
+commandFunc(options);
