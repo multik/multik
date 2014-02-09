@@ -33,7 +33,6 @@
     "async": "~0.2.10",
     "deep-extend": "~0.2.6",
     "grunt": "~0.4.2",
-    "resolve": "~0.6.1",
-    "findup-sync": "~0.1.2"
+    "resolve": "~0.6.1"
   }
 }
