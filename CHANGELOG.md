@@ -1,7 +1,10 @@
 # Changelog
 
+### 0.1.4 - 2014-09-25
+- Critical bug fix
 
-### 0.1.3 - 2014-02-10
+
+### 0.1.3 - 2014-09-10
 - Added the ability to override the value of repo (multikrepo.json)
 
 
