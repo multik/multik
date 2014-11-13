@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.1.5 - 2014-11-13
+- Bug fix: ignore global multikrepo.json if not found local multikrepo.json
+
+
 ### 0.1.4 - 2014-09-25
 - Critical bug fix
 

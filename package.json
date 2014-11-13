@@ -2,7 +2,7 @@
   "name": "multik",
   "description": "CLI tool for scaffolding out Multik projects",
   "author": "Alexander Kuzmin <roosit@abricos.org>",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "license": "MIT",
   "bin": {
     "mk": "./bin/mk",
